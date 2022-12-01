@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.pagination{
+  --bs-pagination-bg:rgb(10, 84, 74);
+  --bs-pagination-border-color: #0a2717;
+  --bs-pagination-hover-bg: #092110;
+    --bs-pagination-hover-border-color: #092110;
+}

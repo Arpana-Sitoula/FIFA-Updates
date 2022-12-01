@@ -18,7 +18,7 @@ export default class NavBar extends Component {
       <i className="fas fa-bars"></i>
     </button>
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a className="navbar-brand" href="#">FIFA</a>
+      <a className="navbar-brand text-success" href="#">FIFA</a>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="/">NEWS</a>
@@ -41,7 +41,7 @@ export default class NavBar extends Component {
           aria-label="Search"
         />
         <button
-          className="btn btn-danger"
+          className="btn btn-warning"
           type="button"
           data-mdb-ripple-color="dark"
         >
