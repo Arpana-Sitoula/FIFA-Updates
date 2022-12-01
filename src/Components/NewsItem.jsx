@@ -23,7 +23,7 @@ export default class NewsItem extends Component {
             </div>
           </div>
           <div className="row mt-2">
-            <div className="col"><a  target="_blank" href={newsUrl} className="stretched-link">
+            <div className="col"><a  target="_blank" rel="noreferrer" href={newsUrl} className="stretched-link text-info">
                 Continue reading
               </a>
             </div>

@@ -4,10 +4,9 @@ export default class Heading extends Component {
   render() {
     return (
       <div>
-        <div className=" container justify-content-center m-5">
+        <div className=" text-light justify-content-center  mt-2">
          <h2>LATEST</h2> 
         </div>
-       
       </div>
     )
   }

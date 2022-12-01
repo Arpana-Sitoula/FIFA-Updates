@@ -184,15 +184,13 @@ export default class News extends Component {
   render() {
     return (
       <div>
-        <div className="container row justify-content-center">
-          <div className="col col-md-8">
-            <Heading />
-          </div>
-        </div>
+       
         <div className="row justify-content-md-center">
+        <div className="col-md-8"><Heading/></div>
           {this.state.articles.map((element) => {
             return (
-              <div className="col-md-8">
+              <div className="col-md-8" id={element.source.id}>
+                
                 <NewsItem
                   title={element.title.slice(0,82)}
                   desc={element.description.slice(0,125)}

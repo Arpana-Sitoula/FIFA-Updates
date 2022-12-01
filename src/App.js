@@ -1,15 +1,17 @@
 import './App.css';
 
 import React, { Component } from 'react'
-import Navigation from './Components/Navigation';
+import Card from './Components/Card';
 import News from './Components/News';
 import Footer from './Components/Footer';
+import NavBar from './Components/NavBar';
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Navigation/>
+        <div className='mb-3'><NavBar/></div>
+        <Card/>
         <News/>
         <Footer/>
       </div>
