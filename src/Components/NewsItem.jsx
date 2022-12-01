@@ -16,7 +16,7 @@ export default class NewsItem extends Component {
           <div className="row ">
             <div className="col">
               <div className="row mb-3"><h4>{title}</h4></div>
-              <div className="row"> <p className="card-text mb-auto">{desc}..</p></div>
+              <div className="row"> <p className="card-text mb-auto">{desc}</p></div>
             </div>
             <div className="col">
             <img style ={{height: "190px", width: "300px"}} src={myUrl} alt="fifa" />
