@@ -10,7 +10,7 @@ export default class Footer extends Component {
   <div className="row">
     <div className="col-lg-5 col-xs-12 about-company">
       <h2>FIFA Update</h2>
-      <p className="pr-5 text-white-50">Get exclusive contents by subscribing us.</p>
+      <p className="pr-5 text-white-50">Get exclusive contents by subscribing us through our email and get daily updates about the football.</p>
       <p><a href="#"><i className="fa fa-facebook-square mr-1"></i></a><a href="#"><i className="fa fa-linkedin-square"></i></a></p>
     </div>
     <div className="col-lg-3 col-xs-12 links">
