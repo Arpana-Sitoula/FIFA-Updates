@@ -11,17 +11,17 @@ export default class Footer extends Component {
     <div className="col-lg-5 col-xs-12 about-company">
       <h2>FIFA Update</h2>
       <p className="pr-5 text-white-50">Get exclusive contents by subscribing us through our email and get daily updates about the football.</p>
-      <p><a href="#"><i className="fa fa-facebook-square mr-1"></i></a><a href="#"><i className="fa fa-linkedin-square"></i></a></p>
+      <p><a href="/"><i className="fa fa-facebook-square mr-1"></i></a><a href="/"><i className="fa fa-linkedin-square"></i></a></p>
     </div>
     <div className="col-lg-3 col-xs-12 links">
       <h4 className="mt-lg-0 mt-sm-3">Links</h4>
         <ul className="m-0 p-0">
-          <li>- <a href="#">Advertise</a></li>
-          <li>- <a href="#">Terms of service</a></li>
-          <li>- <a href="#">Privacy Policy</a></li>
-          <li>- <a href="#">Manage Cookies</a></li>
-          <li>- <a href="#">Partners</a></li>
-          <li>- <a href="#">Contributer</a></li>
+          <li>- <a href="/">Advertise</a></li>
+          <li>- <a href="/">Terms of service</a></li>
+          <li>- <a href="/">Privacy Policy</a></li>
+          <li>- <a href="/">Manage Cookies</a></li>
+          <li>- <a href="/">Partners</a></li>
+          <li>- <a href="/">Contributer</a></li>
         </ul>
     </div>
     <div className="col-lg-4 col-xs-12 location">

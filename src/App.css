@@ -42,3 +42,9 @@
   --bs-pagination-hover-bg: #092110;
     --bs-pagination-hover-border-color: #092110;
 }
+.accordion-item ,.accordion-button{
+  border: none;
+}
+.downArrow{
+cursor: pointer;
+}

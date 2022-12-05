@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-//import fifaImg from '.src/fifa.png';
+import Logo from './Logo';
+
 
 export default class Card extends Component {
   render() {
     return (
      <div>
-      <div className='bg-success' style={{height :"140px", width: "100%"}}></div>
+      <div className='bg-success' style={{height :"140px", width: "100%"}}>
+      <div className=' d-flex align-items-center justify-content-center p-5'> <Logo/></div>
+      </div>
      </div>
     )
   }
