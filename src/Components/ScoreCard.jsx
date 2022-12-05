@@ -5,24 +5,8 @@ export default class ScoreCard extends Component {
     var { group, team1,team2,score1,score2 }= this.props
     return (
       <div>
-        {/* Plan B: */}
-         {/* <div className="accordion">
-  <div className="accordion-item bg-dark text-light">
-    <h2 className="accordion-header" id="headingOne">
-      <button className="accordion-button bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-       <span>Argentna     2  0     Australia</span>
-      </button>
-    </h2>
-    <div id="collapseOne" className="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-       
-      </div>
-    </div>
-  </div>
-</div> */}
-
-    {/* Plan A: */}
-    <div className='row justify-content-between m-3 px-3 py-2 bg-dark rounded'>
+      
+    <div className='row justify-content-between m-3 px-3 py-2 bg-dark rounded' data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
         <div className='col-2 p-1'>
           <div className='text-disabled'>{group}</div>  
         </div>
@@ -35,6 +19,7 @@ export default class ScoreCard extends Component {
                     <div className='p-1'>{team2}</div>
                 </div>
         </div>
+       
         <div className='col-2 p-1 d-flex align-content-between cursor-pointer'>
             <div className='row '>
                 <div className='col'>
@@ -45,13 +30,14 @@ export default class ScoreCard extends Component {
                 </div>
             </div>
         </div>
-        <div id="collapseOne" className="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-       
-      </div>
+        
     </div>
-    </div>
-
+   
+    <div class="row justify-content-between px-3 py-2 collapse" id="collapseExample">
+  <div class="card card-body text-dark">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>
 
       </div>
     )
