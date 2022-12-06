@@ -37,7 +37,25 @@ export default class ScoreCard extends Component {
    
     <div className="row justify-content-between px-3 py-2 collapse" id={collapse}>
   <div className="card card-body text-dark">
-    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    <div className='row justify-content-between'>
+      <div className='col-6'>
+        <div className=' d-flex align-items-start justify-content-evenly'>
+        <ul>
+        <li>Lionel Messi 35'</li>
+        <li>Julian Alvarez 57'</li>
+        </ul>
+        </div>
+      </div>
+      <div className='col-6'>
+        <div className=' d-flex align-items-end justify-content-evenly'>
+        <ul>
+          <li>
+            Enzo Ferendez 77'(OG)
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
       </div>
