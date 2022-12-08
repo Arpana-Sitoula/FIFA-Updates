@@ -48,3 +48,14 @@
 .downArrow{
 cursor: pointer;
 }
+.crop {
+  width: 54px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.crop img {
+  width: 108px;
+  height: 80px;
+  margin: -25px 0 0 -27px;
+}

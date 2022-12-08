@@ -12,13 +12,13 @@ export default class ScoreCard extends Component {
         </div>
         <div className='col-6'>
                 <div className='d-flex justify-content-center'>
-                <img className='p-1' style={{height:"30px", width: "50px"}} src={flag1} alt="flag"/>
+                <img className='p-1 crop'src={flag1} alt="flag"/>
                     <div className='p-1'>{team1.slice(0,3)}</div>
                     <div  className='p-1'>{score1}</div>
                     <div className='p-1'>.</div>
                     <div className='p-1'>{score2}</div>
                     <div className='p-1'>{team2.slice(0,3)}</div>
-                <img className='p-1' style={{height:"30px", width: "50px"}} src={flag2} alt="flag"/>
+                <img className='p-1 crop' src={flag2} alt="flag"/>
                 </div>
         </div>
        
