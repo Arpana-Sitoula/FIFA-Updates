@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class ScoreCard extends Component {
   render() {
-    var { group, team1,team2,score1,score2,collapse, duration,flag1,flag2}= this.props
+    var { group, team1,team2,score1,score2,collapse, duration,flag1,flag2,scorer,time}= this.props
     return (
       <div>
       
@@ -41,8 +41,8 @@ export default class ScoreCard extends Component {
       <div className='col-6'>
         <div className=' d-flex align-items-start justify-content-evenly'>
         <ul>
-        <li>Lionel Messi 35'</li>
-        <li>Julian Alvarez 57'</li>
+        <li>{scorer} {time}'</li>
+        <li>{scorer} {time}'</li>
         </ul>
         </div>
       </div>
@@ -50,7 +50,7 @@ export default class ScoreCard extends Component {
         <div className=' d-flex align-items-end justify-content-evenly'>
         <ul>
           <li>
-            Enzo Ferendez 77'(OG)
+            {scorer} {time}'(OG)
           </li>
         </ul>
         </div>

@@ -20,6 +20,8 @@ export default class Scores extends Component {
                 duration="FT"
                 flag1={"https://countryflagsapi.com/png/032"}
                 flag2={"https://countryflagsapi.com/png/036"}
+                scorer = "Lionel Messi"
+                time ={35}
               />
               <ScoreCard
                 group={"Group F"}
@@ -31,6 +33,8 @@ export default class Scores extends Component {
                 duration="none"
                 flag1={"https://countryflagsapi.com/png/620"}
                 flag2={"https://countryflagsapi.com/png/756"}
+                scorer = "Enzo Ferendez"
+                time =  {77}
               />
             </div>
         
