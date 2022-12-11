@@ -11,11 +11,11 @@ export default class NewsItem extends Component {
         <div className="container shadow p-3 mb-5">
           <div className="row mb-2">
             <div className="col"> <strong className="d-inline-block mb-2 text-success">Sports</strong></div>
-            <div className="col"><div className="mb-1">{date}</div></div>
+            <div className="col"><div className="mb-1">{new Date(date).toGMTString()}</div></div>
           </div>
           <div className="row ">
             <div className="col">
-              <div className="row mb-3"><h4>{title}</h4></div>
+              <div className="row mb-3"><h4>{title}</h4></div><span class="badge bg-secondary">New</span>
               <div className="row"> <p className="card-text mb-auto">{desc}</p></div>
             </div>
             <div className="col">
@@ -27,7 +27,7 @@ export default class NewsItem extends Component {
                 Continue reading
               </a>
             </div>
-            <div className="col"><em className="text-muted">{author}</em></div>
+            <div className="col"><em className="text-muted">Author : {!author?"Unknown":author}</em></div>
           </div>
         </div>
         </div>
