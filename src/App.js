@@ -20,7 +20,7 @@ export default class App extends Component {
           </div>
           <Card/>
           <Routes>
-            <Route path="/" element={<News category="science" country="us"/>} />
+            <Route path="/" element={<News language="en" key="eng"/>} />
             <Route path="scores/" element={<Scores />} />
             <Route path="fixtures/" element={<Fixtures/>}/>
             <Route path="highlights/" element={<Highlights/>}/>

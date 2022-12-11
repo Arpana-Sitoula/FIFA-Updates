@@ -6,8 +6,8 @@ import NewsItem from "./NewsItem";
 
 export default class News extends Component {
   static defaultProps = {
-    country:"us",
-    category:"science"
+    language:"en",
+    
   }
   // static PropTypes = {
   //   country: PropTypes.string.isRequired,
@@ -18,11 +18,12 @@ export default class News extends Component {
     this.state = {
       articles: [],
       loading: false,
-      page:1
+      page:1,
+      language:"en"
     };
   }
   async componentDidMount(){
-    let api = `https://newsapi.org/v2/top-headlines?category=${this.state.category}&country=${this.state.country}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page}`;
+    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.state.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page}&q=football`;
     this.setState({loading:true});
     let data = await fetch(api);
     let parsedData = await data.json();
@@ -34,7 +35,7 @@ export default class News extends Component {
   //pagination logic goes here:
    prevPage = async() =>{
  // console.log("prev");
-  let api = `https://newsapi.org/v2/top-headlines?category=${this.state.category}&country=${this.state.country}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page-1}`;
+  let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.state.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page-1}&q=football`;
   this.setState({loading:true}) ; 
   let data = await fetch(api);
     let parsedData = await data.json();
@@ -53,7 +54,7 @@ export default class News extends Component {
      return( <p>End of the results.</p>)
   }
   else{
-    let api = `https://newsapi.org/v2/top-headlines?category=${this.state.category}&country=${this.state.country}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page+1}`;
+    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.state.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page+1}&q=football`;
       this.setState({loading:true});
       let data = await fetch(api);
       let parsedData = await data.json();

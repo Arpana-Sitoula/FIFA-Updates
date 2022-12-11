@@ -27,8 +27,8 @@ export default class Scores extends Component {
                 group={"Group F"}
                 team1={"Portugal"}
                 team2={"Switzerland"}
-                score1={2}
-                score2={4}
+                score1={6}
+                score2={1}
                 collapse="ex2"
                 duration="none"
                 flag1={"https://countryflagsapi.com/png/620"}
