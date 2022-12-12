@@ -22,7 +22,7 @@ export default class News extends Component {
       language:"en"
     };
   }
-  async componentDidMount(){
+  async updateNews(){
     let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.state.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page}&q=football`;
     this.setState({loading:true});
     let data = await fetch(api);
@@ -31,20 +31,17 @@ export default class News extends Component {
     console.log(api);
     this.setState({articles: parsedData.articles ,loading:false, totalArticles: parsedData.totalResults})
   }
+  async componentDidMount(){
+    this.updateNews();
+  }
 
   //pagination logic goes here:
    prevPage = async() =>{
- // console.log("prev");
-  let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.state.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page-1}&q=football`;
-  this.setState({loading:true}) ; 
-  let data = await fetch(api);
-    let parsedData = await data.json();
-    console.log(parsedData);
     this.setState({
                    loading:false,
-                   articles: parsedData.articles,
                    page: this.state.page-1
-                  })
+                  });
+    this.updateNews();
  
   
   }
@@ -54,16 +51,11 @@ export default class News extends Component {
      return( <p>End of the results.</p>)
   }
   else{
-    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.state.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page+1}&q=football`;
-      this.setState({loading:true});
-      let data = await fetch(api);
-      let parsedData = await data.json();
-      console.log(parsedData);
       this.setState({
               loading:false,
-              articles: parsedData.articles,
               page: this.state.page+1
         })
+        this.updateNews();
   }
 }
 
