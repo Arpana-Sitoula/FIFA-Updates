@@ -13,23 +13,24 @@ export default class News extends Component {
   //   country: PropTypes.string.isRequired,
   //   category:PropTypes.string.isRequired
   // }
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       articles: [],
       loading: false,
-      page:1,
-      language:"en"
+      page:1
     };
   }
   async updateNews(){
-    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.state.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page}&q=football`;
+    this.props.setProgress(0);
+    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.props.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page}&q=football`;
     this.setState({loading:true});
     let data = await fetch(api);
     let parsedData = await data.json();
     console.log(parsedData);
     console.log(api);
     this.setState({articles: parsedData.articles ,loading:false, totalArticles: parsedData.totalResults})
+    this.props.setProgress(100);
   }
   async componentDidMount(){
     this.updateNews();
@@ -62,7 +63,6 @@ export default class News extends Component {
   render() {
     return (
       <div>
-       
         <div className="row justify-content-md-center">
         <div className="col-md-8"><Heading/></div>
         {this.state.loading && <Loading/>}
