@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Heading extends Component {
-  render() {
+const Heading = () => {
+
     return (
       <div>
         <div className=" text-light justify-content-center  mt-2">
@@ -10,4 +10,4 @@ export default class Heading extends Component {
       </div>
     )
   }
-}
+export default Heading

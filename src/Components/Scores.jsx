@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import ScoreCard from "./ScoreCard";
 
-export default class Scores extends Component {
- 
-  render() {
+const Scores = () => {
     return (
       <div className="container m-3">
         <div className="m-3">2022-12-05</div>
@@ -42,4 +40,4 @@ export default class Scores extends Component {
       </div>
     );
   }
-}
+export default Scores;

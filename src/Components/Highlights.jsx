@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Highlights extends Component {
-  render() {
+const  Highlights = () => {
+
     return (
       <div>Highlights</div>
     )
   }
-}
+export default Highlights;

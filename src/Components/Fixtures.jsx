@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Fixtures extends Component {
-  render() {
+const Fixtures = () => {
+
     return (
       <div>Fixtures</div>
     )
   }
-}
+export default Fixtures;
