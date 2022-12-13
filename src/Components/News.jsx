@@ -23,7 +23,7 @@ export default class News extends Component {
   }
   async updateNews(){
     this.props.setProgress(0);
-    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.props.language}&apiKey=28175a33e81f42988a6260df7f5b6776&pageSize=4&page=${this.state.page}&q=football`;
+    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.props.language}&apiKey=${this.props.apiKey}&pageSize=4&page=${this.state.page}&q=football`;
     this.setState({loading:true});
     let data = await fetch(api);
     let parsedData = await data.json();
