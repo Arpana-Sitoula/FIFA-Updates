@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Logo from './Logo';
 
 
-export default class Card extends Component {
-  render() {
+const Card = ()=> {
+  
     return (
      <div>
       <div className='bg-info' style={{height :"140px", width: "100%"}}>
@@ -12,4 +12,5 @@ export default class Card extends Component {
      </div>
     )
   }
-}
+  export default Card
+
