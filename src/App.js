@@ -43,4 +43,4 @@ export default class App extends Component {
     );
   }
 }
-//This is all about class based components. Now we are switching to function based components. Byeee
+
