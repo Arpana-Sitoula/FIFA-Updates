@@ -1,72 +1,57 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Heading from "./Heading";
 import Loading from "./Loading";
 import NewsItem from "./NewsItem";
-//import PropTypes from 'prop-types'
 
-export default class News extends Component {
-  static defaultProps = {
-    language:"en",
-    
-  }
-  // static PropTypes = {
-  //   country: PropTypes.string.isRequired,
-  //   category:PropTypes.string.isRequired
-  // }
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: [],
-      loading: false,
-      page:1
-    };
-  }
-  async updateNews(){
-    this.props.setProgress(0);
-    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${this.props.language}&apiKey=${this.props.apiKey}&pageSize=4&page=${this.state.page}&q=football`;
-    this.setState({loading:true});
+
+const News = () => {
+const [articles, setArticles] = useState([]);
+const [loading, setLoading] = useState(false);
+const [page, setPage] = useState(1);
+const [totalRes , setTotalRes] = useState(0);
+
+  const  updateNews = async(props)=>{
+    props.setProgress(0);
+    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${props.language}&apiKey=${props.apiKey}&pageSize=4&page=${props.page}&q=football`;
+    setLoading(true);
     let data = await fetch(api);
     let parsedData = await data.json();
     console.log(parsedData);
     console.log(api);
-    this.setState({articles: parsedData.articles ,loading:false, totalArticles: parsedData.totalResults})
-    this.props.setProgress(100);
+    setArticles(parsedData.articles);
+    setLoading(false);
+    setTotalRes(parsedData.totalResults);
+    props.setProgress(100);
   }
-  async componentDidMount(){
-    this.updateNews();
-  }
+  useEffect(() => {
+   updateNews();
+  }, [])
 
   //pagination logic goes here:
-   prevPage = async() =>{
-    this.setState({
-                   loading:false,
-                   page: this.state.page-1
-                  });
-    this.updateNews();
+  const prevPage = async() =>{
+   setPage(page-1);
+    updateNews();
  
   
   }
-  nextPage = async() =>{
+  const nextPage = async() =>{
   //console.log("next");
-  if(this.state.page+1>Math.ceil(this.state.totalArticles/4)){
+  if(page+1>Math.ceil(totalRes/4)){
      return( <p>End of the results.</p>)
   }
   else{
-      this.setState({
-              loading:false,
-              page: this.state.page+1
-        })
+      setPage(page+1);
         this.updateNews();
   }
 }
 
-  render() {
+
     return (
       <div>
         <div className="row justify-content-md-center">
         <div className="col-md-8"><Heading/></div>
-        {this.state.loading && <Loading/>}
-          {!this.state.loading && this.state.articles.map((element) => {
+        {loading && <Loading/>}
+          {!loading && articles.map((element) => {
             return (
               <div className="col-md-8" id={element.source.id}>
                 
@@ -85,12 +70,12 @@ export default class News extends Component {
         
   <ul className="pagination  justify-content-center">
     <li className="page-item">
-      <button className="page-link text-info" disabled={this.state.page<=1} onClick={this.prevPage}>
+      <button className="page-link text-info" disabled={page<=1} onClick={prevPage}>
        &laquo; 
       </button>
     </li>
     <li className="page-item">
-      <button className="page-link text-info"  disabled={this.state.page+1>Math.ceil(this.state.totalArticles/4)} onClick={this.nextPage}>
+      <button className="page-link text-info"  disabled={page+1>Math.ceil(totalRes/4)} onClick={nextPage}>
         &raquo;
       </button>
     </li>
@@ -100,6 +85,10 @@ export default class News extends Component {
       
     );
   }
+
+News.defaultProps = {
+  language:"en"
 }
+export default News;
 //Api Key
 //28175a33e81f42988a6260df7f5b6776

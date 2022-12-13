@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React  from 'react'
 
-export default class ScoreCard extends Component {
-  render() {
-    var { group, team1,team2,score1,score2,collapse, duration,flag1,flag2,scorer,time}= this.props
+const ScoreCard = (props) =>{
+
+    var { group, team1,team2,score1,score2,collapse, duration,flag1,flag2,scorer,time}= props
     return (
       <div>
       
@@ -61,4 +61,4 @@ export default class ScoreCard extends Component {
       </div>
     )
   }
-}
+export default ScoreCard;
