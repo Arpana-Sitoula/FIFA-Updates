@@ -4,13 +4,13 @@ import Loading from "./Loading";
 import NewsItem from "./NewsItem";
 
 
-const News = () => {
+const News = (props) => {
 const [articles, setArticles] = useState([]);
 const [loading, setLoading] = useState(false);
 const [page, setPage] = useState(1);
 const [totalRes , setTotalRes] = useState(0);
 
-  const  updateNews = async(props)=>{
+  const  updateNews = async()=>{
     props.setProgress(0);
     let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${props.language}&apiKey=${props.apiKey}&pageSize=4&page=${props.page}&q=football`;
     setLoading(true);

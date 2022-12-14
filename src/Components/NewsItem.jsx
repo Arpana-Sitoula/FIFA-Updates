@@ -14,7 +14,7 @@ const NewsItem = (props) => {
           </div>
           <div className="row ">
             <div className="col">
-              <div className="row mb-3"><h4>{title}</h4></div><span class="badge bg-secondary">New</span>
+              <div className="row mb-3"><h4>{title}</h4></div><span className="badge bg-secondary">New</span>
               <div className="row"> <p className="card-text mb-auto">{desc}</p></div>
             </div>
             <div className="col">
