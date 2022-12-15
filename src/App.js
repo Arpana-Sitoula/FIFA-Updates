@@ -9,6 +9,7 @@ import Highlights from "./Components/Highlights";
 import Card from "./Components/Card";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
+import Sidebar from "./Components/Sidebar";
 
 const App = () => {
   const [progress,setProgress]= useState(0)
@@ -24,6 +25,7 @@ const App = () => {
             <NavBar />
           </div>
           <Card/>
+          <Sidebar/>
           <Routes>
             <Route path="/" element={<News setProgress={setProgress} apiKey="28175a33e81f42988a6260df7f5b6776" language="en" key="eng"/>} />
             <Route path="scores/" element={<Scores />} />
