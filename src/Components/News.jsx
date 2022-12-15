@@ -80,6 +80,7 @@ const [totalRes , setTotalRes] = useState(0);
       </button>
     </li>
   </ul>
+  Total Results : {totalRes}
           </div>
         </div>
       
