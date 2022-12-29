@@ -9,13 +9,17 @@ const News = (props) => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalRes, setTotalRes] = useState(0);
+ 
+
 
   const updateNews = async () => {
     props.setProgress(0);
-    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${props.language}&apiKey=${props.apiKey}&pageSize=4&page=${props.page}&q=football`;
+    let api = `https://newsapi.org/v2/top-headlines?category=sports&language=${props.language}&apiKey=${props.apiKey}&pageSize=5&page=${page}&q=football`;
     setLoading(true);
     let data = await fetch(api);
+    props.setProgress(30);
     let parsedData = await data.json();
+    props.setProgress(70);
     console.log(parsedData);
     console.log(api);
     setArticles(parsedData.articles);
@@ -27,26 +31,29 @@ const News = (props) => {
     updateNews();
   }, []);
 
+
   //pagination logic goes here:
   const prevPage = async () => {
     setPage(page - 1);
     updateNews();
   };
   const nextPage = async () => {
-    //console.log("next");
-    if (page + 1 > Math.ceil(totalRes / 4)) {
+    console.log("next");
+    if (page + 1 > Math.ceil(totalRes / 5)) {
       return <p>End of the results.</p>;
     } else {
       setPage(page + 1);
-      this.updateNews();
+      updateNews();
+      console.log(page);
     }
+   
   };
 
   return (
     <div>
       <div className="row">
         <div className="col-1">
-          <Sidebar />
+          <Sidebar/>
         </div>
         <div className="col-11">
           <div className="row justify-content-md-center">
@@ -59,7 +66,7 @@ const News = (props) => {
                 return (
                   <div className="col-md-8" id={element.source.id}>
                     <NewsItem
-                      title={element.title ? element.title.slice(0, 90) : ""}
+                      title={element.title ? element.title.slice(0, 100) : ""}
                       desc={
                         element.description
                           ? element.description.slice(0, 135)
