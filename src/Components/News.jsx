@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Heading from "./Heading";
 import Loading from "./Loading";
 import NewsItem from "./NewsItem";
-import Sidebar from "./Sidebar";
+
 
 const News = (props) => {
   const [articles, setArticles] = useState([]);
@@ -52,9 +52,6 @@ const News = (props) => {
   return (
     <div>
       <div className="row">
-        <div className="col-1">
-          <Sidebar/>
-        </div>
         <div className="col-11">
           <div className="row justify-content-md-center">
             <div className="col-md-8">
